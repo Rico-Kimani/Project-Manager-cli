@@ -42,6 +42,16 @@ All application data is stored locally in a JSON file, ensuring that information
 
 --Example CLI Menu--
 
+Usage Example;
+## Usage Example
+
+1. Start the application
+
+python3 main.py
+
+2. Select an option from the menu
+
+
 Example of the menu displayed when running the application:
 
 ===== Project Manager CLI =====
@@ -57,9 +67,7 @@ Example of the menu displayed when running the application:
 Select an option:
 
 
-----------Project Structure----------
-
-Your project is organized into modules to separate responsibilities and keep the code maintainable.
+## Project Structure
 
 Project-Manager
 │
@@ -69,7 +77,6 @@ Project-Manager
 │   ├── project.py
 │   ├── storage.py
 │   ├── task.py
-│   ├── test.py
 │   └── user.py
 │
 ├── main.py
@@ -77,8 +84,6 @@ Project-Manager
 ├── Requirement.txt
 ├── .gitignore
 └── LICENSE
-
-
 ---Folder / File Explanation----
 
 root/--Contains the main modules that implement the application's core logic.
@@ -101,9 +106,11 @@ main.py
 The main entry point that starts the application.
 
 Requirement.txt
-Colorama for a better visuall experience
 
+Requirement.txt – Contains Python dependencies used by the project.
 
+Example dependency:
+colorama – Used to display colored text in the CLI interface.
 
 ----README.md--
 Project documentation.
@@ -125,7 +132,12 @@ cd Project-Manager-cli
 Make sure Python 3 is installed:
 
 python3 --version
-3 Run the Application
+
+3. Install dependencies
+
+pip install -r Requirement.txt
+
+4. Run the Application
 
 Start the CLI program by running:
 
@@ -150,12 +162,14 @@ Exit the program
 
 All data will automatically be saved locally through the storage system.
 
+
+
 Technologies Used
 
 Python 3
 
 JSON for data persistence
---------------------------------------------------------------------------
+
 Learning Objectives
 
 This project was created to practice and demonstrate:
