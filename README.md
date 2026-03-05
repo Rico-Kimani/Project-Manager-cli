@@ -1,10 +1,10 @@
-Project Manager CLI
+----Project Manager CLI----
 
 Project Manager CLI is a command-line application that simulates a multi-user project tracking system. The application allows users to create accounts, manage projects, add tasks, and track task completion directly from the terminal.
 
 This project demonstrates important Python development concepts such as Object-Oriented Programming (OOP), file handling with JSON, and building interactive CLI applications.
 
-Features
+------Features-----
 
 Create user accounts
 
@@ -22,7 +22,9 @@ Persistent data storage using JSON
 
 Simple menu-driven command-line interface
 
-How the Application Works
+
+
+----How the Application Works----
 
 Users create an account using a username and email.
 
@@ -36,7 +38,9 @@ Users can view all their projects and associated tasks.
 
 All application data is stored locally in a JSON file, ensuring that information persists between sessions.
 
-Example CLI Menu
+
+
+--Example CLI Menu--
 
 Example of the menu displayed when running the application:
 
@@ -51,8 +55,9 @@ Example of the menu displayed when running the application:
 7. Exit
 
 Select an option:
-----------------------------------------------------------------------------
-Project Structure
+
+
+----------Project Structure----------
 
 Your project is organized into modules to separate responsibilities and keep the code maintainable.
 
@@ -72,10 +77,11 @@ Project-Manager
 ├── Requirement.txt
 ├── .gitignore
 └── LICENSE
-Folder / File Explanation
 
-root/
-Contains the main modules that implement the application's core logic.
+
+---Folder / File Explanation----
+
+root/--Contains the main modules that implement the application's core logic.
 
 app.py – Main application controller that runs the CLI interface
 
@@ -95,10 +101,14 @@ main.py
 The main entry point that starts the application.
 
 Requirement.txt
-Lists any external dependencies needed for the project.
+Colorama for a better visuall experience
 
-README.md
+
+
+----README.md--
 Project documentation.
+
+
 
 LICENSE
 Defines the license for the project.
