@@ -1,4 +1,4 @@
-from task import Task
+from root.task import Task
 
 def test_task_mark_complete():
     task = Task("Test Task")

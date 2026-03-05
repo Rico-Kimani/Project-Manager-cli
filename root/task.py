@@ -5,7 +5,7 @@ class Task:
         self.priority = priority
         self.completed = False
 
-    def complete(self):
+    def mark_complete(self):
         self.completed = True
 
     def __repr__(self):

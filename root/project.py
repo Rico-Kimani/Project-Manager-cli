@@ -7,6 +7,11 @@ class Project:
         self.user = user
         self.tasks = []
 
+    def add_task(self, title, description="", priority=1):
+        task = Task(title, description, priority)
+        self.tasks.append(task)
+        return task
+
     def __repr__(self):
         return f"Project(name='{self.name}')"
 

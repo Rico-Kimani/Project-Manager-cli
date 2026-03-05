@@ -2,6 +2,7 @@ from .storage import load_data, save_info
 from .user import User
 from .project import Project
 from .task import Task
+from colorama import Fore, Style
 
 
 class App:
@@ -48,7 +49,7 @@ class App:
                 break
 
             else:
-                print("Invalid choice. Try again.")
+                print(Fore.RED + "Invalid choice. Try again." + Style.RESET_ALL)
 
     def create_user(self):
         username = input("Username: ").strip()
@@ -61,7 +62,7 @@ class App:
 
         self.users.append(User(username, email))
         save_info(self.users)
-        print("User created successfully")
+        print(Fore.GREEN + "User created successfully" + Style.RESET_ALL)
 
     def login(self):
         username = input("Enter username: ").strip()
@@ -116,7 +117,7 @@ class App:
             for project in user.projects:
                 print(f"  Project: {project.name}")
                 for i, task in enumerate(project.tasks, start=1):
-                    status = "Completed" if task.completed else "pedding"
+                    status = "Completed" if task.completed else "pending"
                     print(f"{i}. {task.title} - {status}")
 
     def complete_task(self):
@@ -132,7 +133,7 @@ class App:
                     print(f"{i}. {task.title}")
 
                 index = int(input("Select task number: ")) - 1
-                project.tasks[index].complete()
+                project.tasks[index].mark_complete()
                 save_info(self.users)
                 print("Task completed ")
                 return

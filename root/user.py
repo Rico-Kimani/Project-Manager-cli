@@ -6,8 +6,8 @@ class User:
         self.email = email
         self.projects = []
 
-    def add_project(self, project_title):
-        project = Project(project_title)
+    def add_project(self, project_title, description=""):
+        project = Project(project_title, description, self)
         self.projects.append(project)
         return project
 

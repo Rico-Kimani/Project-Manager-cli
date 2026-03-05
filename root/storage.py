@@ -5,7 +5,8 @@ from .project import Project
 from .task import Task
 
 # Define folder and files
-DATA_FOLDER = "../data"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_FOLDER =os.path.join(BASE_DIR, "..", "data")
 FILE = os.path.join(DATA_FOLDER, "data.json")
 
 # Ensure folder exists
@@ -13,30 +14,7 @@ if not os.path.exists(DATA_FOLDER):
     os.makedirs(DATA_FOLDER)
 
 def save_info(users):
-   # Save all users
     data = [user.to_dict() for user in users]
-    for user in users:
-        user_dict = {
-            "username": user.username,
-            "email": user.email,
-            "projects": []
-        }
-        for project in user.projects:
-            project_dict = {
-                "name": project.name,
-                "description": project.description,
-                "tasks": []
-            }
-            for task in project.tasks:
-                task_dict = {
-                    "title": task.title,
-                    "description": task.description,
-                    "priority": task.priority,
-                    "completed": task.completed
-                }
-                project_dict["tasks"].append(task_dict)
-            user_dict["projects"].append(project_dict)
-        data.append(user_dict)
 
     with open(FILE, "w") as f:
         json.dump(data, f, indent=4)
@@ -49,6 +27,8 @@ def load_data():
         with open(FILE, "r") as f:
             data = json.load(f)
     except FileNotFoundError:
+        return []
+    except json.JSONDecodeError:
         return []
 
     for user_dict in data:
